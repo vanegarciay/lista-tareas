@@ -71,3 +71,10 @@ function mostrarTareas(){
     var añadido = document.getElementById('agregarTarea').value;
     document.getElementById('lista').innerHTML += "<li>" + añadir + "</li>";
 }
+
+function tareasnuevas(userId,id,title,completed){
+    this.userId = 1;
+    this.id = miObjeto.length;
+    this.title = 
+    this.completed = false;
+}
