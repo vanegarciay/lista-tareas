@@ -65,3 +65,9 @@ var info = document.getElementById('lista');
 miObjeto.forEach(function(elemento){
   info.innerHTML += "<li>" + elemento.title + "</li>";
 }); 
+
+function mostrarTareas(){
+    var añadir = document.getElementById('EntradaAñadir').value;
+    var añadido = document.getElementById('agregarTarea').value;
+    document.getElementById('lista').innerHTML += "<li>" + añadir + "</li>";
+}
