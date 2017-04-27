@@ -61,3 +61,7 @@ var miObjeto = [
 },
 
 ];
+var info = document.getElementById('lista');
+miObjeto.forEach(function(elemento){
+  info.innerHTML += "<li>" + elemento.title + "</li>";
+}); 
