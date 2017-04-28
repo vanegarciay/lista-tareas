@@ -66,15 +66,18 @@ miObjeto.forEach(function(elemento){
   info.innerHTML += "<li>" + elemento.title + "</li>";
 }); 
 
-function mostrarTareas(){
-    var añadir = document.getElementById('EntradaAñadir').value;
-    var añadido = document.getElementById('agregarTarea').value;
-    document.getElementById('lista').innerHTML += "<li>" + añadir + "</li>";
+function agregarTarea(){
+    var nuevaTarea = document.getElementById('nuevaTarea').value;
+    objAux = new agregarObjetoTarea(1, (miObjeto.length+1), nuevaTarea, false);
+    miObjeto.push(objAux);
+    document.getElementById('lista').innerHTML += "<li>" + nuevaTarea + "</li>";
+    document.getElementById('nuevaTarea').value = "";
 }
 
-function tareasnuevas(userId,id,title,completed){
-    this.userId = 1;
-    this.id = miObjeto.length;
-    this.title = 
-    this.completed = false;
+function agregarObjetoTarea(userId,id,title,completed){
+    this.userId = userId;
+    this.id = id;
+    this.title = title;
+    this.completed = completed;
+    console.log(userId+id+title+completed);
 }
