@@ -63,21 +63,24 @@ var miObjeto = [
 ];
 var info = document.getElementById('lista');
 miObjeto.forEach(function(elemento){
-  info.innerHTML += "<li>" + elemento.title + "</li>";
+    var checked = "";
+    if(elemento.completed){
+        checked = "checked";
+    }
+    info.innerHTML += '<li><input type="checkbox" name="tarea" value="' + elemento.id + '" ' + checked + '>' + elemento.title + "</li>"; //Checklist a todas las tareas que son true
 }); 
 
 function agregarTarea(){
     var nuevaTarea = document.getElementById('nuevaTarea').value;
-    objAux = new agregarObjetoTarea(1, (miObjeto.length+1), nuevaTarea, false);
-    miObjeto.push(objAux);
-    document.getElementById('lista').innerHTML += "<li>" + nuevaTarea + "</li>";
-    document.getElementById('nuevaTarea').value = "";
+    objAux = new agregarObjetoTarea(1, (miObjeto.length+1), nuevaTarea, false); // creacion del objeto con los parametros por defecto del principio y fin y los del medio ingresados por el usuario o del tamaño del arreglo
+    miObjeto.push(objAux);// Añado las tareas ingresadas mediante mi objeto a mi JSON
+    document.getElementById('lista').innerHTML += '<li><input type="checkbox" name="tarea" value="' + (miObjeto.length+1) + '">' + nuevaTarea + "</li>"; //Checkbox para las nuevas tareas añadidas sin el shulito porque son false por default
+    document.getElementById('nuevaTarea').value = ""; // Las "" despues del igual hacen que despues de las tareas ingresadas vuelva a quedar la cajita vacia
 }
 
-function agregarObjetoTarea(userId,id,title,completed){
+function agregarObjetoTarea(userId,id,title,completed){ //constructor para añadir objetos a JSON
     this.userId = userId;
     this.id = id;
     this.title = title;
     this.completed = completed;
-    console.log(userId+id+title+completed);
 }

@@ -1,8 +1,7 @@
 ## Proyecto final de Sprint
 
-Creacion de una lista de tareas mediante HTML, Javascript con manejo del DOM
+Creacion de una lista de tareas mediante HTML y Javascript con manejo del DOM, agregando las nuevas tareas ingresadas por el usuario al JSON mediante un constructor.
 
-
-*Nota: No alcance a hacer el constructor por el problema que tuve con mis commits no alcance :(*
+*Extra:* Checkbox para las tareas hechas.
 
 _Por Vanessa Garcia Yara_
